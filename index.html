@@ -3,90 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CIS 658 Web Architecture - Login</title>
+    <title>CIS 658 Web Architecture</title>
     <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
+        /* General styles */
+        * {
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom right, #4caf50, #2196f3);
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
 
-        /* Main container */
-        .container {
+        body {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+        }
+
+        /* Header section */
+        header {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: #ffcc00;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff6600;
+        }
+
+        /* Login form */
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.2);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            width: 300px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(5px);
         }
 
-        .container h1 {
-            font-size: 24px;
+        .login-container h2 {
             margin-bottom: 20px;
         }
 
-        /* Login form styles */
-        .login-form label {
-            display: block;
-            margin: 10px 0 5px;
-            font-size: 16px;
-            text-align: left;
-        }
-
-        .login-form input {
+        .login-container input {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
+            padding: 12px;
+            margin: 10px 0;
             border: none;
             border-radius: 5px;
-            font-size: 14px;
+            font-size: 1rem;
+            outline: none;
         }
 
-        .login-form button {
-            background-color: #2196f3;
-            color: white;
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            background: #ffcc00;
             border: none;
-            padding: 10px 15px;
             border-radius: 5px;
-            font-size: 16px;
+            font-size: 1.2rem;
+            color: black;
+            font-weight: bold;
             cursor: pointer;
-            width: 100%;
+            transition: background 0.3s ease;
         }
 
-        .login-form button:hover {
-            background-color: #1976d2;
+        .login-container button:hover {
+            background: #ff6600;
         }
 
-        /* Footer styles */
+        /* Footer section */
         footer {
-            margin-top: 20px;
-            font-size: 14px;
+            margin-top: 50px;
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+
+            .login-container {
+                width: 90%;
+            }
+        }
+
+        /* Keyframes for animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>CIS 658: Web Architecture</h1>
-        <form class="login-form" action="#" method="POST">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="Enter your username" required>
 
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+    <header>
+        <h1>CIS 658 - Web Architecture</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Courses</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
 
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="#" method="post">
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
-        <footer>
-            &copy; 2025 CIS 658 Web Architecture
-        </footer>
     </div>
+
+    <footer>
+        &copy; 2025 CIS 658 - Web Architecture. All Rights Reserved.
+    </footer>
+
 </body>
 </html>
